@@ -28,7 +28,7 @@ export default function LoginForm() {
     resolver: yupResolver(schema),
   });
 
-  const [setAuth] = useContext(AuthContext);
+  const [auth, setAuth] = useContext(AuthContext);
 
   async function onSubmit(data) {
     setSubmitting(true);
@@ -53,7 +53,7 @@ export default function LoginForm() {
     <>
       <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
         {loginError && <span className="error">{loginError}</span>}
-        <h2 className="loginForm__title">Enter your credential below:</h2>
+        <h2 className="loginForm__title">Enter your credentials below:</h2>
         <div className="loginForm__item">
           <input name="identifier" placeholder="Username" {...register("identifier")} />
           {errors.username && <span className="error">{errors.username.message}</span>}
