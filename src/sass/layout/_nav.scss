@@ -1,0 +1,75 @@
+nav {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 80px;
+  background-color: $primary-color;
+  color: $secondary-color;
+  align-items: center;
+
+  @include larger {
+    padding: 0 20%;
+  }
+
+  .fa-icons {
+    font-size: 26px;
+  }
+
+  svg:hover {
+    cursor: pointer;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    top: 80px;
+    left: 0;
+    background-color: $primary-color;
+    gap: 2rem;
+    padding-top: 4rem;
+    height: 100%;
+    transition: all 0.5s ease;
+
+    @include larger {
+      height: 80px;
+      justify-content: center;
+      flex-direction: row;
+      gap: 5rem;
+      padding-top: 0;
+      background-color: $secondary-color;
+      border-bottom: 1px solid $primary-color;
+    }
+
+    li {
+      align-self: center;
+      font-family: $heading-font;
+      letter-spacing: 0.2rem;
+
+      .active {
+        color: $red-color;
+      }
+    }
+
+    a {
+      font-size: 26px;
+      color: $secondary-color;
+      text-shadow: 1px 1px 2px $gray-color;
+      border-bottom: 1px solid transparent;
+      transition: all 0.5s ease-in;
+      width: 100%;
+
+      @include larger {
+        color: $primary-color;
+      }
+
+      &:hover {
+        border-bottom: 1px solid $secondary-color;
+      }
+    }
+  }
+}

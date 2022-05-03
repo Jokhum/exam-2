@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 1px solid $primary-color;
+}
+
+.centered {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.blue {
+  color: $primary-color;
+}
+
+.wrapper {
+  margin: 0 1rem;
+  margin-bottom: 4rem;
+
+  @include larger {
+    margin: 0 20%;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

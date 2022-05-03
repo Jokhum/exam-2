@@ -1,0 +1,51 @@
+.featured {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 100%;
+
+  // Breakpoint Featured Container
+
+  @include larger {
+    flex-direction: row;
+  }
+
+  // Featured Card Styles
+
+  .featuredCard {
+    position: relative;
+    max-width: 600px;
+
+    // Featured Card Image Styles
+    img {
+      height: 400px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    // Breakpoint Featured Card Styles
+    @include larger {
+      width: 600px;
+    }
+
+    // Featured Container Title Text Styles
+    &__item__title {
+      color: $secondary-color;
+      text-shadow: 2px 2px 1px #000;
+      position: absolute;
+      top: 0;
+      left: 1rem;
+    }
+
+    &__item__type {
+      position: absolute;
+      top: 3.2rem;
+      padding: 0 1rem;
+      margin-left: 1px;
+      text-align: start;
+      color: $primary-color;
+      text-shadow: 1px 1px 2px #fff;
+      background-color: rgba(255, 255, 255, 0.858);
+    }
+  }
+}
