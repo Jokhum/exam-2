@@ -43,7 +43,7 @@ export default function LoginForm() {
       history("/admin");
     } catch (error) {
       console.log("error", error);
-      setLoginError(error.toString());
+      // setLoginError(error.toString());
     } finally {
       setSubmitting(false);
     }
