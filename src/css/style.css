@@ -22,6 +22,20 @@ img {
           justify-content: center;
 }
 
+.column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .blue {
   color: #00415e;
 }
@@ -34,6 +48,7 @@ img {
 @media (min-width: 1000px) {
   .wrapper {
     margin: 0 20%;
+    margin-bottom: 4rem;
   }
 }
 
@@ -176,6 +191,12 @@ nav .nav__list a:hover {
   border-bottom: 1px solid #ffffff;
 }
 
+@media (min-width: 1000px) {
+  nav .nav__list a:hover {
+    border-bottom: 1px solid #00415e;
+  }
+}
+
 .search {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -301,6 +322,10 @@ nav .nav__list a:hover {
           transform: scale(1.1);
 }
 
+.introImage {
+  width: 100%;
+}
+
 .featured {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -311,6 +336,8 @@ nav .nav__list a:hover {
           flex-direction: column;
   gap: 4rem;
   width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 @media (min-width: 1000px) {
@@ -324,7 +351,7 @@ nav .nav__list a:hover {
 
 .featured .featuredCard {
   position: relative;
-  max-width: 600px;
+  width: 500px;
 }
 
 .featured .featuredCard img {
@@ -332,12 +359,6 @@ nav .nav__list a:hover {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-@media (min-width: 1000px) {
-  .featured .featuredCard {
-    width: 600px;
-  }
 }
 
 .featured .featuredCard__item__title {
@@ -407,6 +428,7 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
+  z-index: 999;
   margin-top: 4rem;
   background-color: #00415e;
   color: #ffffff;
@@ -449,6 +471,11 @@ input::placeholder {
   opacity: 1;
 }
 
+input[type="checkbox"] {
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
 textarea {
   border: 1px solid #00415e;
   padding: 0.7rem;
@@ -473,6 +500,15 @@ textarea::-ms-input-placeholder {
 
 textarea::placeholder {
   opacity: 1;
+}
+
+select {
+  border: 1px solid #00415e;
+  padding: 0.7rem;
+  background-color: #00415e;
+  color: #ffffff;
+  font-family: "address-sans-pro", sans-serif;
+  font-size: 16px;
 }
 
 .contactForm {
@@ -529,6 +565,106 @@ textarea::placeholder {
           flex-direction: column;
 }
 
+.modalBackground {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  position: absolute;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 40px;
+}
+
+.modalBackground .modalForm {
+  width: 80%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  border: 2px solid #00415e;
+  padding: 1rem;
+  -webkit-box-shadow: 3px 3px 10px #000;
+          box-shadow: 3px 3px 10px #000;
+}
+
+@media (min-width: 1000px) {
+  .modalBackground .modalForm {
+    width: 700px;
+  }
+}
+
+.modalBackground .modalForm .closeModal {
+  color: #00415e;
+  font-size: 30px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.modalBackground .modalForm .closeModal:hover {
+  cursor: pointer;
+}
+
+.modalBackground .modalForm h1 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.modalBackground .modalForm__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.establishmentForm {
+  max-width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  border: 2px solid #00415e;
+  padding: 1rem;
+}
+
+.establishmentForm textarea {
+  height: 300px;
+}
+
+.establishmentForm__title {
+  font-weight: 400;
+  margin: 0;
+}
+
+.establishmentForm__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .error {
   background-color: #a40d0d;
   color: #ffffff;
@@ -537,7 +673,7 @@ textarea::placeholder {
 }
 
 .success {
-  display: none;
+  display: block;
   background-color: #006407;
   color: #ffffff;
   padding: 0.5rem;
@@ -574,9 +710,23 @@ button:hover {
   letter-spacing: 0.2rem;
 }
 
+@media (min-width: 1000px) {
+  .logOutButton {
+    color: #00415e;
+    background-color: transparent;
+  }
+}
+
 .logOutButton:hover {
   border-bottom: 1px solid #ffffff;
   background-color: transparent;
+}
+
+@media (min-width: 1000px) {
+  .logOutButton:hover {
+    color: #00415e;
+    border-bottom: 1px solid #00415e;
+  }
 }
 
 .details {
@@ -588,6 +738,7 @@ button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  min-height: 1000px;
 }
 
 .details__container {
@@ -627,5 +778,50 @@ button:hover {
 .details__description {
   margin: 1rem 0;
   text-align: center;
+}
+
+.adminMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.adminMenu__button {
+  margin-top: 2rem;
+}
+
+.adminMenu__message__item {
+  border: 1px solid #00415e;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.adminMenu__message__heading {
+  margin: 0.4rem 0;
+}
+
+.adminMenu__imageUpload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.adminMenu__imageUpload button {
+  margin-top: 1rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,8 +1,13 @@
+.introImage {
+  width: 100%;
+}
+
 .featured {
   display: flex;
   flex-direction: column;
   gap: 4rem;
   width: 100%;
+  flex-wrap: wrap;
 
   // Breakpoint Featured Container
 
@@ -14,18 +19,13 @@
 
   .featuredCard {
     position: relative;
-    max-width: 600px;
+    width: 500px;
 
     // Featured Card Image Styles
     img {
       height: 400px;
       width: 100%;
       object-fit: cover;
-    }
-
-    // Breakpoint Featured Card Styles
-    @include larger {
-      width: 600px;
     }
 
     // Featured Container Title Text Styles

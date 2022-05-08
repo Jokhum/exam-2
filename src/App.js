@@ -2,13 +2,13 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./components/context/AuthContext";
 import NavBar from "./components/NavBar";
-import Home from "./components/pages/Home";
-import Contact from "./components/pages/Contact";
-import Admin from "./components/pages/Admin";
-import Accommodations from "./components/pages/Accommodations";
-import Login from "./components/pages/Login";
+import Home from "./components/pages/home/Home";
+import Contact from "./components/pages/contact/Contact";
+import Admin from "./components/pages/admin/Admin";
+import Accommodations from "./components/pages/accommodations/Accommodations";
+import Login from "./components/pages/login/Login";
 import Footer from "./components/Footer";
-import AccommodationDetails from "./components/accommodationDetails";
+import AccommodationDetails from "./components/pages/AccommodationDetails";
 
 function App() {
   return (

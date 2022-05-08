@@ -14,6 +14,13 @@ img {
   justify-content: center;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
 .blue {
   color: $primary-color;
 }
@@ -24,6 +31,7 @@ img {
 
   @include larger {
     margin: 0 20%;
+    margin-bottom: 4rem;
   }
 }
 
