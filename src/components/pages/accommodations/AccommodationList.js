@@ -53,7 +53,7 @@ export default function AccommodationList() {
                 </h2>
                 <p>{accommodation.attributes.location}</p>
                 <p className="accommodationCard__item__price">
-                  <span className="blue">{accommodation.attributes.price} NOK</span>
+                  <span className="blue">from {accommodation.attributes.price} NOK</span>
                 </p>
               </div>
             </div>
