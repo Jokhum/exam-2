@@ -79,7 +79,6 @@ export default function Modal({ closeModal, pageTitle, pageId }) {
             <textarea {...register("message")} placeholder="Your message here..." />
             {errors.message && <span className="error">{errors.message.message}</span>}
           </div>
-
           {serverError && <span className="error">{serverError}</span>}
           <div className="centered">
             <button>{submitting ? "Sending message..." : "Send"}</button>

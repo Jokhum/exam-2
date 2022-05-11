@@ -3,7 +3,7 @@ import api from "../../../constants/api";
 import { Link } from "react-router-dom";
 import placeholderImage from "../../../images/Placeholder.png";
 
-function AccommodationList() {
+export default function AccommodationList() {
   const [accommodations, setAccommodations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,7 +15,6 @@ function AccommodationList() {
 
         if (response.ok) {
           const json = await response.json();
-
           setAccommodations(json.data);
         } else {
           setError("An error has occured!");
@@ -39,7 +38,7 @@ function AccommodationList() {
     <>
       {accommodations.map((accommodation) => (
         <div className="accommodationCard" key={accommodation.id}>
-          <Link to={`accommodation/${accommodation.id}`}>
+          <Link to={`detail/${accommodation.id}`}>
             <div className="accommodationCard__item">
               <div className="accommodationCard__item__image">
                 {accommodation.attributes.image.data === null ? (
@@ -62,5 +61,3 @@ function AccommodationList() {
     </>
   );
 }
-
-export default AccommodationList;

@@ -15,29 +15,24 @@ button {
 }
 
 .logOutButton {
+  height: auto;
   color: $secondary-color;
-  height: 100%;
+  background-color: transparent;
   width: auto;
   font-size: 24px;
   text-shadow: 1px 1px 2px $gray-color;
-  border-bottom: 1px solid transparent;
-  transition: all 0.5s ease-in;
-  padding: 0;
-  margin: 0;
   letter-spacing: 0.2rem;
-
-  @include larger {
-    color: $primary-color;
-    background-color: transparent;
-  }
+  text-decoration: none;
+  width: 100%;
 
   &:hover {
-    border-bottom: 1px solid $secondary-color;
-    background-color: transparent;
+    background-color: $secondary-color;
+    color: $primary-color;
+    transition: all 0.2s ease-out;
+    padding: 1rem;
 
     @include larger {
-      color: $primary-color;
-      border-bottom: 1px solid $primary-color;
+      border-radius: 5px;
     }
   }
 }

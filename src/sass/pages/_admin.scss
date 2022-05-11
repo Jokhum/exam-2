@@ -1,8 +1,10 @@
 .adminMenu {
   display: flex;
   flex-direction: column;
+
   &__button {
     margin-top: 2rem;
+    margin-right: 1rem;
   }
 
   &__message__item {

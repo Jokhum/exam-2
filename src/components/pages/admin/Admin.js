@@ -4,6 +4,7 @@ import Heading from "../../Heading";
 import AuthContext from "../../context/AuthContext";
 import MessagesList from "./messages/MessagesList";
 import UploadImage from "./establishment/UploadImage";
+import EnquiriesList from "./enquiries/EnquiriesList";
 
 export default function Admin() {
   const [showForm, setShowForm] = useState(false);
@@ -18,6 +19,10 @@ export default function Admin() {
     <>
       <Heading title={"Welcome, " + username + "!"} />
       <div className="adminMenu">
+        <div className="adminMenu__messages">
+          <EnquiriesList />
+          <MessagesList />
+        </div>
         {showForm ? (
           <button className="adminMenu__button" onClick={onClick}>
             X
@@ -28,8 +33,6 @@ export default function Admin() {
           </button>
         )}
         {showForm ? <AddEstablishment /> : null}
-
-        <MessagesList />
 
         {showUpload ? (
           <button className="adminMenu__button" onClick={onPress}>

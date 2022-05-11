@@ -2,7 +2,7 @@ import React from "react";
 import Heading from "../../Heading";
 import LoginForm from "./LoginForm";
 
-function Login() {
+export default function Login() {
   return (
     <>
       <Heading title="Login" />
@@ -10,5 +10,3 @@ function Login() {
     </>
   );
 }
-
-export default Login;

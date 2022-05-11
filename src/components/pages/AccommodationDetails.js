@@ -4,6 +4,9 @@ import api from "../../constants/api";
 import axios from "axios";
 import Modal from "../Modal";
 import placeholderImage from "../../images/Placeholder.png";
+import { FaBath } from "react-icons/fa";
+import { FaBed } from "react-icons/fa";
+import ImageCarousel from "../ImageCarousel";
 
 export default function AccommodationDetails() {
   const [accommodation, setAccommodation] = useState([]);
@@ -55,6 +58,8 @@ export default function AccommodationDetails() {
     setPageId(accommodation.id);
   };
 
+  const carouselImages = accommodation.attributes.image_gallery.data;
+
   return (
     <>
       <section className="details">
@@ -67,10 +72,18 @@ export default function AccommodationDetails() {
           )}
           <div className="details__subtext">
             <p>{accommodation.attributes.location}</p>
-            <p className="details__subtext__price">{accommodation.attributes.price} NOK per night</p>
+            <div className="details__facilites">
+              <p className="details__facilites__bedtype">
+                <FaBed className="details__facilities__icons" /> &nbsp;{accommodation.attributes.bed} x {accommodation.attributes.bedtype} bed(s)
+              </p>
+              {accommodation.attributes.bathroom === true ? <FaBath className="details__facilities__icons" /> : <p className="details__facilities__bathroom">No bathroom available.</p>}
+            </div>
           </div>
+          <p className="details__subtext__price">{accommodation.attributes.price} NOK /night</p>
         </div>
         <p className="details__description">{accommodation.attributes.description}</p>
+        <ImageCarousel props={carouselImages} />
+        <h3 className="centered enquiry">Send us an enquiry on this establishment now:</h3>
         <div className="centered">
           <button
             onClick={() => {

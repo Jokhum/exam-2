@@ -7,7 +7,11 @@ function Home() {
   return (
     <>
       <Heading title="Welcome to Holidaze!" />
-      <img className="introImage" src={image} alt="Bergen Brygge"></img>
+
+      <div className="main__container">
+        <img className="main__container__image" src={image} alt="Bergen Brygge"></img>
+      </div>
+
       <p>We are a leading accommodations booking company based in Bergen, Norway and we can make your vacation dreams come through!</p>
       <p>
         If your looking for low spending or high quality living, it does not matter, go right ahead and check our accommodation list for our full selection or take a quick peak at the featured hotel

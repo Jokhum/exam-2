@@ -5,7 +5,7 @@ import api from "../../../constants/api";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function Accommodations() {
+export default function Accommodations() {
   const [accommodationData, setAccommodationData] = useState([]);
   const [search, setSearch] = useState("");
   const [filteredAccommodations, setFilteredAccommodations] = useState([]);
@@ -35,7 +35,7 @@ function Accommodations() {
                 visibleList.style.display = "block";
                 return (
                   <li key={accommodation.id}>
-                    <Link to={`accommodation/${accommodation.id}`}>{accommodation.attributes.name}</Link>
+                    <Link to={`detail/${accommodation.id}`}>{accommodation.attributes.name}</Link>
                   </li>
                 );
               })
@@ -59,5 +59,3 @@ function Accommodations() {
     </>
   );
 }
-
-export default Accommodations;
