@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import api from "../../constants/api";
 import axios from "axios";
 import Modal from "../Modal";
-import placeholderImage from "../../images/Placeholder.png";
 import { FaBath } from "react-icons/fa";
 import { FaBed } from "react-icons/fa";
 import ImageCarousel from "../ImageCarousel";
@@ -64,12 +63,8 @@ export default function AccommodationDetails() {
     <>
       <section className="details">
         <h1>{accommodation.attributes.name}</h1>
+        <ImageCarousel props={carouselImages} />
         <div className="details__container">
-          {accommodation.attributes.image.data === null ? (
-            <img className="details__image" src={placeholderImage} alt="Placeholder"></img>
-          ) : (
-            <img className="details__image" src={accommodation.attributes.image.data[0].attributes.url} alt={accommodation.attributes.image.data[0].attributes.alternativeText}></img>
-          )}
           <div className="details__subtext">
             <p>{accommodation.attributes.location}</p>
             <div className="details__facilites">
@@ -82,8 +77,8 @@ export default function AccommodationDetails() {
           <p className="details__subtext__price">{accommodation.attributes.price} NOK /night</p>
         </div>
         <p className="details__description">{accommodation.attributes.description}</p>
-        <ImageCarousel props={carouselImages} />
-        <h3 className="centered enquiry">Send us an enquiry on this establishment now:</h3>
+
+        <h3 className="centered enquiry">Book this establishment now:</h3>
         <div className="centered">
           <button
             onClick={() => {

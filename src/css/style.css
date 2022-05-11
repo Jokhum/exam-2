@@ -793,10 +793,13 @@ button:hover {
 }
 
 .details__container {
-  max-width: 600px;
+  width: 80%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .details__image {
@@ -958,6 +961,12 @@ button:hover {
   height: 600px;
 }
 
+@media (min-width: 1000px) {
+  .details__image__carousel .slide.active {
+    max-width: 80%;
+  }
+}
+
 .details__image__carousel .slide.active img {
   height: 100%;
   width: 100%;
@@ -985,6 +994,16 @@ button:hover {
 .details__image__carousel .arrow__right:hover,
 .details__image__carousel .arrow__left:hover {
   cursor: pointer;
+}
+
+@media (min-width: 1000px) {
+  .details__image__carousel .arrow__right,
+  .details__image__carousel .arrow__left {
+    color: #00415e;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
 }
 
 .details__image__carousel .arrow__right {

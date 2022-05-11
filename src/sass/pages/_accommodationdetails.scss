@@ -5,8 +5,9 @@
   min-height: 1000px;
 
   &__container {
-    max-width: 600px;
+    width: 80%;
     align-self: center;
+    justify-content: space-between;
   }
 
   &__image {

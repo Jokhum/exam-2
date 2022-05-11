@@ -4,7 +4,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 600px;
+  width: 100%;
+
   position: relative;
 
   .image {
@@ -20,9 +21,13 @@
 
   .slide.active {
     opacity: 1;
-    transition-duration: 2s ease-out;
+    transition-duration: 2s;
     height: 600px;
-    width: 100%;
+
+    @include larger {
+      max-width: 80%;
+    }
+
     img {
       height: 100%;
       width: 100%;
@@ -44,6 +49,12 @@
 
     &:hover {
       cursor: pointer;
+    }
+
+    @include larger {
+      color: $primary-color;
+      background-color: transparent;
+      box-shadow: none;
     }
   }
 
