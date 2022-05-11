@@ -48,7 +48,9 @@ export default function AccommodationList() {
                 )}
               </div>
               <div className="accommodationCard__item__text">
-                <h2>{accommodation.attributes.name}</h2>
+                <h2>
+                  {accommodation.attributes.name} {accommodation.attributes.type}
+                </h2>
                 <p>{accommodation.attributes.location}</p>
                 <p className="accommodationCard__item__price">
                   <span className="blue">{accommodation.attributes.price} NOK</span>
