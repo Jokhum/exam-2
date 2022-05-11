@@ -788,27 +788,20 @@ button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
+  max-width: 940px;
   min-height: 1000px;
 }
 
+.details h1 {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
 .details__container {
-  width: 80%;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.details__image {
-  width: 100%;
-  -webkit-box-shadow: 2px 2px 6px #000;
-          box-shadow: 2px 2px 6px #000;
-}
-
-.details__subtext {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -816,19 +809,19 @@ button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  width: 100%;
+  -ms-flex-item-align: center;
+      align-self: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-size: 14px;
-  height: 30px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.details__subtext__price {
+.details__price {
+  width: 100%;
   font-size: 18px;
   font-weight: 900;
   color: #00415e;
@@ -837,7 +830,13 @@ button:hover {
 
 .details__description {
   margin: 1rem 0;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 940px;
 }
 
 .details__facilites {
@@ -857,12 +856,17 @@ button:hover {
       -ms-flex-align: center;
           align-items: center;
   gap: 1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .details__facilites__bedtype {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .details__facilites p {
@@ -871,7 +875,7 @@ button:hover {
 
 .details__facilites svg {
   color: #00415e;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .adminMenu {
@@ -918,6 +922,7 @@ button:hover {
 
 .uppercase {
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .details__image__carousel {

@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import api from "../../constants/api";
 import axios from "axios";
 import Modal from "../Modal";
-import { FaBath } from "react-icons/fa";
-import { FaBed } from "react-icons/fa";
+import { FaBath, FaBed } from "react-icons/fa";
 import ImageCarousel from "../ImageCarousel";
 
 export default function AccommodationDetails() {
@@ -65,19 +64,16 @@ export default function AccommodationDetails() {
         <h1>{accommodation.attributes.name}</h1>
         <ImageCarousel props={carouselImages} />
         <div className="details__container">
-          <div className="details__subtext">
-            <p>{accommodation.attributes.location}</p>
-            <div className="details__facilites">
-              <p className="details__facilites__bedtype">
-                <FaBed className="details__facilities__icons" /> &nbsp;{accommodation.attributes.bed} x {accommodation.attributes.bedtype} bed(s)
-              </p>
-              {accommodation.attributes.bathroom === true ? <FaBath className="details__facilities__icons" /> : <p className="details__facilities__bathroom">No bathroom available.</p>}
-            </div>
+          <p>{accommodation.attributes.location}</p>
+          <div className="details__facilites">
+            <p className="details__facilites__bedtype">
+              <FaBed className="details__facilities__icons" /> &nbsp;{accommodation.attributes.bed} x {accommodation.attributes.bedtype} bed(s)
+            </p>
+            {accommodation.attributes.bathroom === true ? <FaBath className="details__facilities__icons" /> : <p className="details__facilities__bathroom">No bathroom available.</p>}
           </div>
-          <p className="details__subtext__price">{accommodation.attributes.price} NOK /night</p>
         </div>
+        <p className="details__price">{accommodation.attributes.price} NOK /night</p>
         <p className="details__description">{accommodation.attributes.description}</p>
-
         <h3 className="centered enquiry">Book this establishment now:</h3>
         <div className="centered">
           <button
