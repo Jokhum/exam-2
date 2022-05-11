@@ -28,7 +28,7 @@ export default function LoginForm() {
     resolver: yupResolver(schema),
   });
 
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth, setAuth] = useContext(AuthContext); //eslint-disable-line
 
   async function onSubmit(data) {
     setSubmitting(true);
