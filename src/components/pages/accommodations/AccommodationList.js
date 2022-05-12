@@ -37,7 +37,7 @@ export default function AccommodationList() {
   return (
     <>
       {accommodations.map((accommodation) => (
-        <div className="accommodationCard" key={accommodation.id}>
+        <article className="accommodationCard" key={accommodation.id}>
           <Link to={`detail/${accommodation.id}`}>
             <div className="accommodationCard__item">
               <div className="accommodationCard__item__image">
@@ -58,7 +58,7 @@ export default function AccommodationList() {
               </div>
             </div>
           </Link>
-        </div>
+        </article>
       ))}
     </>
   );
