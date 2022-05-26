@@ -18,9 +18,7 @@ export default function MessagesList() {
         const response = await http.get(url);
         setMessages(response.data.data);
       } catch (error) {
-        // setError(error.toString());
-      } finally {
-        // setLoading(false);
+        console.log(error);
       }
     }
     fetchMessages();
@@ -30,19 +28,24 @@ export default function MessagesList() {
     <>
       {showMessage ? (
         <>
-          <button className="adminMenu__button" onClick={onClick}>
-            Close Messages
-          </button>
-          <ul className="adminMenu__message__list">
+          {messages.length === 0 ? (
+            <button style={{ backgroundColor: "#a40d0d" }} onClick={onClick}>
+              No new messages!
+            </button>
+          ) : (
+            <button className="AdminMenu__Button" id="messageBtn" onClick={onClick}>
+              Close Messages
+            </button>
+          )}
+          <ul className="AdminMenu__Message__List">
             {messages.map((message) => {
               return (
-                <li key={message.id} className="adminMenu__message__item">
+                <li key={message.id} className="AdminMenu__Message__Item">
                   <>
-                    <h3 className="adminMenu__message__heading">
-                      <span className="uppercase">"{message.attributes.subject}"</span> from <span className="uppercase">{message.attributes.name}</span> -{" "}
+                    <h3 className="AdminMenu__Message__Heading">
+                      <span className="Uppercase">"{message.attributes.subject}"</span> from <span className="Uppercase">{message.attributes.name}</span> -{" "}
                       <a href="mailto: {message.attributes.email}">Reply</a>
                     </h3>
-
                     <p>{message.attributes.message}</p>
                   </>
                 </li>
@@ -51,7 +54,7 @@ export default function MessagesList() {
           </ul>
         </>
       ) : (
-        <button className="adminMenu__button" onClick={onClick}>
+        <button className="AdminMenu__Button" id="messageBtn" onClick={onClick}>
           Show Messages
         </button>
       )}

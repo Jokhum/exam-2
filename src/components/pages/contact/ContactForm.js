@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import api from "../../../constants/api";
+import { useNavigate } from "react-router-dom";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please enter your name.").min(3, "The name must be at least 3 characters!"),
@@ -15,7 +16,7 @@ export default function ContactForm() {
   const [success, setSuccess] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState(null);
-  const form = document.querySelector(".contactForm");
+  const history = useNavigate();
 
   const {
     register,
@@ -35,12 +36,9 @@ export default function ContactForm() {
       },
     };
 
-    console.log(data);
-    console.log(options);
     try {
       const response = await fetch(url, options);
-      const json = await response.json();
-      console.log("response", json);
+
       if (response) {
         setSuccess(true);
       }
@@ -48,6 +46,7 @@ export default function ContactForm() {
       console.log("error", error);
       setServerError(error.toString());
     } finally {
+      const form = document.querySelector("form");
       setSubmitting(false);
       form.reset();
     }
@@ -55,33 +54,33 @@ export default function ContactForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="contactForm">
-        <div className="contactForm__item">
+      <form onSubmit={handleSubmit(onSubmit)} className="ContactForm">
+        <div className="ContactForm__Item">
           <label htmlFor="name">Full Name:</label>
           <input {...register("name")} placeholder="Your name here..." />
-          {errors.name && <span className="error">{errors.name.message}</span>}
+          {errors.name && <span className="Error">{errors.name.message}</span>}
         </div>
 
-        <div className="contactForm__item">
+        <div className="ContactForm__Item">
           <label htmlFor="email">E-mail:</label>
           <input {...register("email")} placeholder="Your mail address here..." />
-          {errors.email && <span className="error">{errors.email.message}</span>}
+          {errors.email && <span className="Error">{errors.email.message}</span>}
         </div>
 
-        <div className="contactForm__item">
+        <div className="ContactForm__Item">
           <label htmlFor="subject">Subject:</label>
           <input {...register("subject")} placeholder="Your subject here..." />
-          {errors.subject && <span className="error">{errors.subject.message}</span>}
+          {errors.subject && <span className="Error">{errors.subject.message}</span>}
         </div>
-        <div className="contactForm__item">
+        <div className="ContactForm__Item">
           <label htmlFor="message">Message:</label>
           <textarea {...register("message")} placeholder="Your message here..." />
-          {errors.message && <span className="error">{errors.message.message}</span>}
+          {errors.message && <span className="Error">{errors.message.message}</span>}
         </div>
         {serverError && <span className="error">{serverError}</span>}
-        {success ? <span className="success">Your message has been sent!</span> : null}
-        <div className="centered">
-          <button className="contactForm__button">{submitting ? "Sending message..." : "Send"}</button>
+        {success ? <span className="Success">Your message has been sent!</span> : null}
+        <div className="Centered">
+          <button>{submitting ? "Sending message..." : "Send"}</button>
         </div>
       </form>
     </>
