@@ -4,8 +4,8 @@
 
 ## Description
 
-- Several pages ( Home, Contact, Accommodations, Login, etc ).
-- Admin login via JWT & localstorage. Admin dashboard with different functions ( create establishment, read messages from contact form etc. 
+- Several pages (Home, Contact, Accommodations, Login, etc).
+- Admin login via JWT & localstorage. Admin dashboard with different functions (create establishment, read messages from contact form etc). 
 - Detail page for each individual establishment.
 - A contact page & a enquiry modal (with validations) too send messages to the admin.
 - Search typeahead with a dropdown matching establishment titles.
