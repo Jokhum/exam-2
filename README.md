@@ -1,6 +1,6 @@
 # Exam 2 ( Holidaze Booking )
 
-![image](too come)
+![image](https://github.com/Jokhum/exam-2/blob/fec0f1e137bb2b5c51c16676b123e71eb942b8b5/src/images/overview.png)
 
 ## Description
 
