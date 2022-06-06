@@ -40,6 +40,8 @@ To run the project:
 npm run start
 ```
 
+2. If you want to test the project with admin details, please contact me by the information provided below.
+
 ## Contact
 
 <a href="https://www.linkedin.com/in/pwerven/" target="_blank">
