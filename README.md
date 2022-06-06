@@ -1,11 +1,11 @@
 # Exam 2 ( Holidaze Booking )
 
-![image](too come)
+![image](https://github.com/Jokhum/exam-2/blob/fec0f1e137bb2b5c51c16676b123e71eb942b8b5/src/images/overview.png)
 
 ## Description
 
-- Several pages ( Home, Contact, Accommodations, Login, etc ).
-- Admin login via JWT & localstorage. Admin dashboard with different functions ( create establishment, read messages from contact form etc. 
+- Several pages (Home, Contact, Accommodations, Login, etc).
+- Admin login via JWT & localstorage. Admin dashboard with different functions (create establishment, read messages from contact form etc). 
 - Detail page for each individual establishment.
 - A contact page & a enquiry modal (with validations) too send messages to the admin.
 - Search typeahead with a dropdown matching establishment titles.
@@ -39,6 +39,8 @@ To run the project:
 ```bash
 npm run start
 ```
+
+2. If you want to test the project with admin details, please contact me by the information provided below.
 
 ## Contact
 
