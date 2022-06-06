@@ -5,7 +5,8 @@
 ## Description
 
 - Several pages (Home, Contact, Accommodations, Login, etc).
-- Admin login via JWT & localstorage. Admin dashboard with different functions (create establishment, read messages from contact form etc). 
+- Admin login via JWT & localstorage. Admin dashboard with different functions (create establishment, read messages from contact form etc).
+- Fetching the list of establishment and most of the other information (relations, message information, and so on) on the site from the strapi server provided.
 - Detail page for each individual establishment.
 - A contact page & a enquiry modal (with validations) too send messages to the admin.
 - Search typeahead with a dropdown matching establishment titles.
